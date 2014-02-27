@@ -1,0 +1,133 @@
+2014-02-26 14:33:15 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /CakeBlog/posts/view/1
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-26 14:33:46 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /CakeBlog/posts/
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-26 14:33:57 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /CakeBlog/posts/
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-26 14:36:11 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /CakeBlog/posts/
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-26 14:41:30 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\wamp\www\CakeBlog\app\View\Posts\view.ctp, line 4]
+2014-02-26 14:41:30 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CakeBlog/posts/view/1
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 4, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 4, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:07:45 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 34]
+2014-02-26 16:07:45 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CakeBlog/posts
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:07:58 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 34]
+2014-02-26 16:07:58 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:08:04 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 34]
+2014-02-26 16:08:04 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:08:06 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 34]
+2014-02-26 16:08:06 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 34, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:09:31 Error: Fatal Error (4): syntax error, unexpected '?>', expecting function (T_FUNCTION) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 57]
+2014-02-26 16:09:31 Error: [FatalErrorException] syntax error, unexpected '?>', expecting function (T_FUNCTION)
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 57, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 57, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-26 16:09:45 Error: [NotFoundException] Invalid post
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 C:\wamp\www\CakeBlog\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-26 16:16:22 Error: [NotFoundException] Invalid post
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 C:\wamp\www\CakeBlog\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-26 16:16:24 Error: [NotFoundException] Invalid post
+Request URL: /CakeBlog/posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 C:\wamp\www\CakeBlog\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\CakeBlog\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\CakeBlog\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-26 16:23:00 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\wamp\www\CakeBlog\app\Controller\PostsController.php, line 58]
+2014-02-26 16:23:00 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CakeBlog/posts
+Stack Trace:
+#0 C:\wamp\www\CakeBlog\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 58)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\Cak...', 58, Array)
+#2 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\Cak...', 58, Array)
+#3 C:\wamp\www\CakeBlog\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
