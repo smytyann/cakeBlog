@@ -22,15 +22,18 @@ class PostsController extends AppController {
 	//This function will allow us to add to the post datasabe
     public function add() {// LET ME ADD NEW POST
         if ($this->request->is('post')) { //Checking if this is a HTTP POST request//Request an Object
-            $this->Post->create();//Initialising the Post Model//Making sure the POST MODEL IS READY
-            if ($this->Post->save($this->request->data)) { //Handing the request object data to be save by the post model
+           	   $this->Post->create();//Initialising the Post Model//Making sure the POST MODEL IS READY
+           //Added this line
+				$this->request->data['Post']['user_id'] = $this->Auth->user('id');
+		   if ($this->Post->save($this->request->data)) { //Handing the request object data to be save by the post model
                 $this->Session->setFlash(__('Your post has been saved.'));//Displaying an Success confirmation msg 
                 return $this->redirect(array('action' => 'index'));//Redirecting to the Postes index action
             }
             $this->Session->setFlash(__('Unable to add your post.'));//Flash a message saying we werent able to do it
         }
     }
-
+	
+			
 	public function edit($id = null) {//Function will allow us to edit an existing post
     if (!$id) {
         throw new NotFoundException(__('Invalid post'));
@@ -67,5 +70,22 @@ class PostsController extends AppController {
         return $this->redirect(array('action' => 'index'));// When is done , redirect to INDEX
     }
 }
+}
+	public function isAuthorized($user) {//Adding the isAuthorized function it will allow authors
+										//to create posts but prevent the edition of posts if the author does not match. 
+		// All registered users can add posts
+		if ($this->action === 'add') {
+			return true;
+		}
+
+		// The owner of a post can edit and delete it
+		if (in_array($this->action, array('edit', 'delete'))) {
+			$postId = $this->request->params['pass'][0];
+			if ($this->Post->isOwnedBy($postId, $user['id'])) {
+				return true;
+			}
+		}
+
+		return parent::isAuthorized($user);
 }
 ?>
