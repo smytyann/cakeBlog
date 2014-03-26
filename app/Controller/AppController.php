@@ -30,38 +30,38 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-// app/Controller/AppController.php
 
 class AppController extends Controller {
-    //...
-
-    public $components = array(
-        'Session',// Displaying the flash messages
-        'Auth' => array(
-            'loginRedirect' => array(//Location where the user should be redirect to
-                'controller' => 'users',
-                'action' => 'index' ),
+ 
+public function beforeFilter() {
+        $this->layout = 'bootstrap';
+        $this->Auth->allow('index', 'view');
+        $this->set('logged_in', $this->Auth->loggedIn());
+        $this->set('current_user', $this->Auth->user());
+    }	
+public $components = array(
+    'Session',
+	'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'posts',
+                'action' => 'index'
+            ),
             'logoutRedirect' => array(
                 'controller' => 'users',
-                'action' => 'display',
-                'home' ),
-			  'authError' => "YOU CANT ACESS THAT PAGE", // Added this line
-			 'authorize' => array('Controller') // Added this line
+                'action' => 'login',
+            ),
+            'authorize' => array('Controller')
         )
     );
-	public function isAuthorized($user) {//Checks to see the role of the user and if is admin let the user in
+
+	public function isAuthorized($user) {
     // Admin can access every action
-    if (isset($user['role']) && $user['role'] === 'admin') {
+ //   if (isset($user['role']) && $user['role'] === 'admin') {
         return true;
     }
-
     // Default deny
-    return false;
-}
-	
-    public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
-    }
-    //...
+//    return false;}
+    
+ 
 }
 ?>
