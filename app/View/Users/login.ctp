@@ -1,4 +1,4 @@
-//app/View/Users/login.ctp
+
 <h2>Login</h2>
 <div class="users form">
 
