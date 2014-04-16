@@ -82,7 +82,7 @@ class PostsController extends AppController {
 	}
 
 	public function isAuthorized($user) {//Adding the isAuthorized function it will allow authors
-										//to create posts but prevent the edition of posts if the author does not match. 
+		//to create posts but prevent the edition of posts if the author does not match. 
 		// All registered users can add posts
 		if ($this->action === 'add') {
 			return true;

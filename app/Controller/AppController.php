@@ -53,7 +53,11 @@ public $components = array(
             'authorize' => array('Controller')
         )
     );
-
+    public $helpers = array(
+ 		    'Form' => array(
+ 		        'className' => 'BootstrapForm'
+ 	  	  	)
+ 		);
 	public function isAuthorized($user) {
     // Admin can access every action
  //   if (isset($user['role']) && $user['role'] === 'admin') {

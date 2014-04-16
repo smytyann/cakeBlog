@@ -37,6 +37,9 @@ class PagesController extends AppController {
  */
 	public $uses = array();
 
+   public function index() {// Finding all the records in the Post table and handing the resulting 
+        $this->set('posts', $this->Post->find('all'));
+    }
 /**
  * Displays a view
  *

@@ -1,6 +1,8 @@
 <?php
 /**
+ * Bake Template for Controller action generation.
  *
+ * PHP 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -11,51 +13,142 @@
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
+ * @package       Cake.Console.Templates.default.actions
+ * @since         CakePHP(tm) v 1.3
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+/**
+ * <?php echo $admin ?>index method
+ *
+ * @return void
+ */
+	public function <?php echo $admin ?>index() {
+		$this-><?php echo $currentModelName ?>->recursive = 0;
+		$this->set('<?php echo $pluralName ?>', $this->Paginator->paginate());
+	}
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+/**
+ * <?php echo $admin ?>view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function <?php echo $admin ?>view($id = null) {
+		if (!$this-><?php echo $currentModelName; ?>->exists($id)) {
+			throw new NotFoundException(__('Invalid <?php echo strtolower($singularHumanName); ?>'));
+		}
+		$options = array('conditions' => array('<?php echo $currentModelName; ?>.' . $this-><?php echo $currentModelName; ?>->primaryKey => $id));
+		$this->set('<?php echo $singularName; ?>', $this-><?php echo $currentModelName; ?>->find('first', $options));
+	}
+
+<?php $compact = array(); ?>
+/**
+ * <?php echo $admin ?>add method
+ *
+ * @return void
+ */
+	public function <?php echo $admin ?>add() {
+		if ($this->request->is('post')) {
+			$this-><?php echo $currentModelName; ?>->create();
+			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
+<?php if ($wannaUseSession): ?>
+				$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+<?php else: ?>
+				return $this->flash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), array('action' => 'index'));
+<?php endif; ?>
+			}
+		}
+<?php
+	foreach (array('belongsTo', 'hasAndBelongsToMany') as $assoc):
+		foreach ($modelObj->{$assoc} as $associationName => $relation):
+			if (!empty($associationName)):
+				$otherModelName = $this->_modelName($associationName);
+				$otherPluralName = $this->_pluralName($associationName);
+				echo "\t\t\${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
+				$compact[] = "'{$otherPluralName}'";
+			endif;
+		endforeach;
+	endforeach;
+	if (!empty($compact)):
+		echo "\t\t\$this->set(compact(".join(', ', $compact)."));\n";
+	endif;
+?>
+	}
+
+<?php $compact = array(); ?>
+/**
+ * <?php echo $admin ?>edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function <?php echo $admin; ?>edit($id = null) {
+		if (!$this-><?php echo $currentModelName; ?>->exists($id)) {
+			throw new NotFoundException(__('Invalid <?php echo strtolower($singularHumanName); ?>'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
+<?php if ($wannaUseSession): ?>
+				$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+<?php else: ?>
+				return $this->flash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), array('action' => 'index'));
+<?php endif; ?>
+			}
+		} else {
+			$options = array('conditions' => array('<?php echo $currentModelName; ?>.' . $this-><?php echo $currentModelName; ?>->primaryKey => $id));
+			$this->request->data = $this-><?php echo $currentModelName; ?>->find('first', $options);
+		}
+<?php
+		foreach (array('belongsTo', 'hasAndBelongsToMany') as $assoc):
+			foreach ($modelObj->{$assoc} as $associationName => $relation):
+				if (!empty($associationName)):
+					$otherModelName = $this->_modelName($associationName);
+					$otherPluralName = $this->_pluralName($associationName);
+					echo "\t\t\${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
+					$compact[] = "'{$otherPluralName}'";
+				endif;
+			endforeach;
+		endforeach;
+		if (!empty($compact)):
+			echo "\t\t\$this->set(compact(".join(', ', $compact)."));\n";
+		endif;
 	?>
-</head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+	}
 
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
-</body>
-</html>
+/**
+ * <?php echo $admin ?>delete method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function <?php echo $admin; ?>delete($id = null) {
+		$this-><?php echo $currentModelName; ?>->id = $id;
+		if (!$this-><?php echo $currentModelName; ?>->exists()) {
+			throw new NotFoundException(__('Invalid <?php echo strtolower($singularHumanName); ?>'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this-><?php echo $currentModelName; ?>->delete()) {
+<?php if ($wannaUseSession): ?>
+			$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> has been deleted.'), 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+		}
+		return $this->redirect(array('action' => 'index'));
+<?php else: ?>
+			return $this->flash(__('The <?php echo strtolower($singularHumanName); ?> has been deleted.'), array('action' => 'index'));
+		} else {
+			return $this->flash(__('The <?php echo strtolower($singularHumanName); ?> could not be deleted. Please, try again.'), array('action' => 'index'));
+		}
+<?php endif; ?>
+	}

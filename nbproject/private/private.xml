@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/CakeBlog/app/Model/User.php</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/Model/Post.php</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/Controller/AppController.php</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/View/Layouts/default.ctp</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/Controller/UsersController.php</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/View/Users/view.ctp</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/Controller/PostsController.php</file>
+            <file>file:/C:/wamp/www/CakeBlog/app/View/Posts/view.ctp</file>
+        </group>
+    </open-files>
+</project-private>

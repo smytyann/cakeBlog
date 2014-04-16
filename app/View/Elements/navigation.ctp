@@ -1,3 +1,4 @@
+<!--/FIRST BLACK NAVIGATION -->
 <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -6,14 +7,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Yann CakeBlog</a>
+          <a class="navbar-brand" href="#">NewsYann</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Home</a></li>
-         <!--   <li><a href="http://localhost/CakeBlog/users">User</a></li>
-            <li><a href="http://localhost/CakeBlog/posts">Post</a></li>//-->
-                <li>    <?php echo $this->Html->link('Users',array('controller' => 'users', 'action' => 'index')); ?></li>
+            <li class="active"><a <?php echo $this->Html->link('Home',array('controller' => 'homes', 'action' => 'index')); ?></a></li>
+               <li>    <?php echo $this->Html->link('Users',array('controller' => 'users', 'action' => 'index')); ?></li>
 		<li>	<?php echo $this->Html->link('Posts',array('controller' => 'posts', 'action' => 'index')); ?></li>
 		
           </ul>
